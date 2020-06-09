@@ -19,9 +19,6 @@ def collatz(numero):                    #La funcion tienen como parametro el num
     return(salida)
 
 
-
-
-
 terminacion_carnet = 459    #Se crea una variable para la terminacion del carnet. Mi carnet es 201430459
 inicio = 2                  #Se crea una variable con el valor de inicio de las secuencias
 
@@ -31,9 +28,8 @@ for i in range(inicio,terminacion_carnet+1): #Se hace un ciclo for que recorra t
     secuencias.append(collatz(i))              #Se agrega a la lista las series generadas por cada numero del rango
 
 
-archivo = open('collatz.txt','w')
-for i in secuencias:
-    archivo.write(str(i)+'\n')
+archivo = open('collatz.txt','w')   #Se abre/crea el archivo donde se va a guardar el resultado. Se usa 'w' para sobreescribir el archivo
+for i in secuencias:                #Se usa un ciclo for recorrer las secuencias generadas.
+    archivo.write(str(i)+'\n')      #Se agrega al archivo las secuencias generadas. Se usa un salto de linea ('\n') para cumplir con el formato establecido.
 
-
-archivo.close()
+archivo.close()                     #Se cierra el archivo
